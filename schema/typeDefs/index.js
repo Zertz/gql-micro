@@ -1,4 +1,4 @@
-const Album = require("./Album");
-const Playlist = require("./Playlist");
+const enterprise = require("./enterprise");
+const spotify = require("./spotify");
 
-module.exports = [...Album, ...Playlist];
+module.exports = [...enterprise, ...spotify];

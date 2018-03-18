@@ -5,7 +5,6 @@ const typeDefs = require("./typeDefs");
 
 const RootQuery = `
   type RootQuery {
-    album(id: String!): Album
     featuredPlaylists: [Playlist]
     newReleases: [Album]
   }
