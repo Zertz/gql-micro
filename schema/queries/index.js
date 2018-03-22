@@ -1,7 +1,9 @@
+const enterprise = require("./enterprise");
 const spotify = require("./spotify");
 
 module.exports = {
-  RootQuery: {
+  Query: {
+    ...enterprise,
     ...spotify
   }
 };

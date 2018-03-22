@@ -3,7 +3,7 @@ const Human = require("./Human");
 
 const Enterprise = `
   type Enterprise {
-    id: String!
+    id: ID!
     name: String
     ceo: Human
     employees: [Human]

@@ -1,24 +1,39 @@
 const { makeExecutableSchema } = require("graphql-tools");
 
-const resolvers = require("./resolvers");
+const mutations = require("./mutations");
+const queries = require("./queries");
 const typeDefs = require("./typeDefs");
 
-const RootQuery = `
-  type RootQuery {
+const SchemaDefinition = `
+  schema {
+    query: Query
+    mutation: Mutation
+  }
+`;
+
+const Query = `
+  type Query {
+    dataProviders: [DataProvider]
+    jobs: [Job]
+    job(id: String!): Job
     featuredPlaylists: [Playlist]
     newReleases: [Album]
   }
 `;
 
-const SchemaDefinition = `
-  schema {
-    query: RootQuery
+const Mutation = `
+  type Mutation {
+    createJob(input: JobInput): Job
+    updateJob(id: ID!, input: JobInput): Job
   }
 `;
 
 const schema = makeExecutableSchema({
-  typeDefs: [SchemaDefinition, RootQuery, ...typeDefs],
-  resolvers
+  typeDefs: [SchemaDefinition, Query, Mutation, ...typeDefs],
+  resolvers: {
+    ...mutations,
+    ...queries
+  }
 });
 
 module.exports = schema;

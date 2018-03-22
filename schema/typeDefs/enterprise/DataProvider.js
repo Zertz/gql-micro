@@ -1,6 +1,8 @@
 const DataProvider = `
   type DataProvider {
-    id: String!
+    id: ID!
+    name: String!
+    acronym: String!
   }
 `;
 

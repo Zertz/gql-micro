@@ -3,7 +3,7 @@ const Job = require("./Job");
 
 const Human = `
   type Human {
-    id: String!
+    id: ID!
     name: String
     job: Job
     provider: DataProvider

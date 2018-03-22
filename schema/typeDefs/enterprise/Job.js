@@ -2,9 +2,13 @@ const DataProvider = require("./DataProvider");
 
 const Job = `
   type Job {
-    id: String!
-    name: String
+    id: ID!
+    name: String!
     provider: DataProvider
+  }
+
+  input JobInput {
+    name: String
   }
 `;
 

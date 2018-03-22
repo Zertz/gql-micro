@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "micro",
+    "deploy": "now && now alias",
     "dev": "micro-dev --port 5000"
   },
   "repository": {
@@ -19,13 +20,16 @@
   "homepage": "https://github.com/Zertz/gql-micro#readme",
   "dependencies": {
     "apollo-server-micro": "^1.3.2",
+    "aws-sdk": "^2.211.0",
+    "documentdb": "^1.14.2",
     "dotenv": "^5.0.1",
     "graphql": "^0.13.1",
     "graphql-resolvers": "^0.2.2",
     "graphql-tools": "^2.21.0",
     "micro": "^9.1.0",
     "micro-cors": "^0.1.0",
-    "node-fetch": "^2.0.0"
+    "node-fetch": "^2.0.0",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "micro-dev": "^2.2.0",
